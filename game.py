@@ -3,6 +3,7 @@ import foes
 import map
 import move
 import combat
+import narrative
 
 
 def main():
@@ -11,13 +12,14 @@ def main():
     """
     player = character.create_character()
     achieved_goal = False
+    game_loop = 1
     while player["current health"] > 0 and not achieved_goal:
+        narrative.print_instructions(game_loop)
         rows = 9
         columns = 9
-        enemy = foes.create_enemy()
+        enemy = foes.create_enemy(game_loop)
         board = map.create_map(rows, columns)
-        achieved_goal = False
-        while character.is_alive(player) and board[(int(rows / 2), int(columns / 2))] != " ":   # change it to is_alive as a boolean?
+        while character.is_alive(player) and foes.boss_is_alive(board):
             map.print_map(rows, columns, board, player)
             direction = move.get_direction()
             if direction == "QUIT":
@@ -27,13 +29,14 @@ def main():
             if valid_move:
                 move.move_character(direction, player)
                 if combat.check_for_foes(player, board):
-                    combat.beat_foe(player, enemy, board)   # change it to is_alive = combat.beat_foe(player, enemy, board)
+                    combat.beat_foe(player, enemy, board)
                     map.clear_foe_on_map(player, board)
                     character.accumulate_experience(player)
                     character.check_if_leve_up(player)
             else:
                 print("Warning! You're heading to a wrong way. Please enter a valid direction.")
         character.reset_character_position(player)
+        game_loop += 1
     if not character.is_alive(player):
         print("Game over! You are out of HP.")
     else:

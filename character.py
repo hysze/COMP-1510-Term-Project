@@ -59,13 +59,13 @@ def check_if_leve_up(character: dict):
         character["current health"] = character["base health"] * character["level"]
         character["current damage"] = character["base damage"] * character["level"]
         character["accumulated experience"] -= 10
-        print(f"Level up! Your health is fully recovered and you can now create higher damage.\n"
+        print("Level up! Your health is fully recovered and you can now create higher damage.\n"
               "Your basic statistics is as follows:\n"
-              "Name: {character['name']}\n"
-              "Level: {character['level']}\n"
-              "HP: {character['current health']}\n"
-              "Damage: {character['current damage']}\n"
-              "Experience: {character['accumulated experience']}")
+              f"Name: {character['name']}\n"
+              f"Level: {character['level']}\n"
+              f"HP: {character['current health']}\n"
+              f"Damage: {character['current damage']}\n"
+              f"Experience: {character['accumulated experience']}")
 
 
 def reset_character_position(character: dict):

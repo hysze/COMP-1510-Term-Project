@@ -4,17 +4,29 @@ numbers to be changed
 """
 
 
-def create_enemy() -> dict:
+def create_enemy(scaler: int) -> dict:
+    """
+    scaler is round
+    :param scaler:
+    :return:
+    """
     foes = {
         "beast": {
             "name": "beast",
-            "health": 1,
-            "damage": 1
+            "health": 1 * scaler,
+            "damage": 1 * scaler
         },
         "dragon": {
             "name": "dragon",
-            "health": 10,
-            "damage": 3
+            "health": 1 * scaler,
+            "damage": 3 * scaler
         }
     }
     return foes
+
+
+def boss_is_alive(game_map: dict):
+    if "!" in game_map.values():
+        return True
+    else:
+        return False
