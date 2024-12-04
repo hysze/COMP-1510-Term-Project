@@ -14,7 +14,7 @@ def check_for_foes(character: dict, board: dict) -> bool:
                     inside the board dictionary is not a space character, which means there is a
                     foe; return False when the corresponding value is a space character, meaning
                     that there is nothing
-    :return: a Boolean
+    :return: a Boolean where True represents there is a foe and False represents there is not
 
     >>> player_one = {"current row": 1, "current column": 1}
     >>> board_one = {(0, 0): " ", (0, 1): " ", (1, 0): "!", (1, 1): "*"}
@@ -47,7 +47,7 @@ def beat_foe(character: dict, foes: dict, board: dict) -> bool:
     :postcondition: Call battle_with_foe function to fight with a foe; return True if the numeric
                     value corresponded to the character's "current health" is larger than zero and
                     return False if less than or equal to zero
-    :return: a Boolean
+    :return: a Boolean where True represents the player beat foe and otherwises False
     """
     location = (character["current row"], character["current column"])
 

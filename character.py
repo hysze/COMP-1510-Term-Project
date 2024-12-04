@@ -47,7 +47,7 @@ def is_alive(character: dict) -> bool:
     :precondition: character must be a dictionary containing a key called "current health"
     :postcondition: Return True if the numeric value corresponded to "current health" key is larger
                     than zero and return False is less than zero
-    :return: a boolean
+    :return: a boolean where True represents the character is alive and otherwises False
 
     >>> player_one = {"current health": 5}
     >>> is_alive(player_one)
