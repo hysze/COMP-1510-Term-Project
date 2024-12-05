@@ -18,7 +18,8 @@ This game is called "One Way Out". If possible, please play the game first befor
 codes. 
 
 And my apology. I underestimated the time required for this term project, and perhaps do not have 
-enough time to update the flowchart.
+enough time to update the flowchart. If you eventually do not see an updated one, that means I fail 
+to update the flowchart by the due date.
 
 ## Inclusion of manadatory elements
 | appropriate? | appropriate use of ...                  | module    | line no. | comments                                                                                                                                                                                                                    |
