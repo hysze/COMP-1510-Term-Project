@@ -14,7 +14,7 @@ def main():
     player = character.create_character()
     goal_attained = False
     game_loop = 1
-    while player["current health"] > 0 and not goal_attained:
+    while character.is_alive(player) and not goal_attained:
         narrative.print_instructions(game_loop)
         rows = 9
         columns = 9
