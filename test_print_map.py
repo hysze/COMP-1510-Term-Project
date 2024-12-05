@@ -11,7 +11,7 @@ class Test(TestCase):
     @patch("sys.stdout", new_callable=io.StringIO)
     def test_print_map_for_small_sized_map(self, mock_stdout):
         game_map = {(0, 0): " ", (0, 1): "*", (0, 2): "*", (1, 0): "*", (1, 1): "!", (1, 2): " ",
-                   (2, 0): "*", (2, 1): "*", (2, 2): "*"}
+                    (2, 0): "*", (2, 1): "*", (2, 2): "*"}
         character = {"current row": 0, "current column": 0}
         print_map(3, 3, game_map, character)
         expected = ("\n[@] - You; [*] - Beast; [!] - Dragon\n\n"
