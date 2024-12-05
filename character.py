@@ -17,7 +17,7 @@ def create_character() -> dict[str, int]:
                 "base health": 10, "base damage": 1, "accumulated experience": 0, "current row": 0,
                 "current column": 0}
     """
-    username = input("Welcome to the game, \"One Way Out\"!\n"
+    username = input("WELCOME TO THE GAME, \"ONE WAY OUT\"!\n"
                      "Before you start, please tell me your name: ")
     character = {
         "name": username,

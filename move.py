@@ -6,7 +6,8 @@ def get_direction() -> str:
                     either "W", "A", "S", "D" or "QUIT" in all caps as a string
     :return: a string specifying the desired direction
     """
-    direction = input("Enter \"W-A-S-D\" to move up-left-down-right or \"Quit\" to quit the game: ")
+    direction = input("\nEnter \"W-A-S-D\" to move up-left-down-right or \"Quit\" to quit the game"
+                      ": ")
     direction = direction.upper()
     valid_input = ["W", "A", "S", "D", "QUIT"]
     if direction not in valid_input:
