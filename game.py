@@ -41,8 +41,8 @@ def main():
         print("\nGame over! You die in the forest running out of HP. Your soul will be staying "
               "here forever...")
     else:
-        print("\nCongratulations! You find the ONLY WAY OUT and can come back to BCIT to continue "
-              "your endless work! :)")
+        print("\nCongratulations! You find the ONLY WAY OUT!\n "
+              "You can now come back to BCIT to continue your endless work! :)")
 
 
 if __name__ == "__main__":
