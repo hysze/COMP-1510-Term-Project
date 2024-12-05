@@ -26,7 +26,11 @@ def check_for_foes(character: dict, board: dict) -> bool:
     False
     """
     location = (character["current row"], character["current column"])
-    if board[location] != " ":
+    if board[location] == "*":
+        print("\nYou encounter a beast!")
+        return True
+    elif board[location] == "!":
+        print("\nYou encounter a dragon!")
         return True
     else:
         return False
@@ -52,10 +56,8 @@ def beat_foe(character: dict, foes: dict, board: dict) -> bool:
     location = (character["current row"], character["current column"])
 
     if board[location] == "*":
-        print("\nYou encounter a beast!")
         enemy = {"health": foes["beast"]["health"], "damage": foes["beast"]["damage"]}
     else:
-        print("\nYou encounter a dragon!")
         enemy = {"health": foes["dragon"]["health"], "damage": foes["dragon"]["damage"]}
 
     battle_with_foe(character, enemy)
