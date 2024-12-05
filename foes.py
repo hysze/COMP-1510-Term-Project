@@ -1,8 +1,8 @@
-def create_enemy(scaler: int) -> dict:
+def create_enemy(scaling_factor: int) -> dict:
     """
     Create enemies based on a scaler.
 
-    :param scaler: an integer
+    :param scaling_factor: an integer
     :precondition: scaler should be a non-zero positive integer practically
     :postcondition: create a dictionary containing two types of enemies, beast and dragon; each
                     enemy's statistics is calculated based on a scaler passed to this function,
@@ -18,12 +18,12 @@ def create_enemy(scaler: int) -> dict:
     """
     foes = {
         "beast": {
-            "health": 1 * scaler,
-            "damage": 1 * scaler
+            "health": 1 * scaling_factor,
+            "damage": 1 * scaling_factor
         },
         "dragon": {
-            "health": 10 * scaler,
-            "damage": 3 * scaler
+            "health": 10 * scaling_factor,
+            "damage": 3 * scaling_factor
         }
     }
     return foes
