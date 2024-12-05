@@ -25,12 +25,14 @@ def create_map(rows: int, columns: int) -> dict:
     center_point = (int(rows / 2), int(columns / 2))
     game_map[center_point] = "!"
 
-    for foe_count in range(rows + columns):
+    foe_count = 0
+    while foe_count < rows + columns:
         random_row = random.randint(0, rows - 1)
         random_column = random.randint(0, columns - 1)
         random_point = (random_row, random_column)
         if random_point != (0, 0) and game_map[random_point] == " ":
             game_map[random_point] = "*"
+            foe_count += 1
 
     return game_map
 
