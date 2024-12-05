@@ -12,9 +12,9 @@ def main():
     Drive the program.
     """
     player = character.create_character()
-    goal_obtained = False
+    goal_attained = False
     game_loop = 1
-    while player["current health"] > 0 and not goal_obtained:
+    while player["current health"] > 0 and not goal_attained:
         narrative.print_instructions(game_loop)
         rows = 9
         columns = 9
@@ -23,8 +23,8 @@ def main():
         while character.is_alive(player) and foes.boss_is_alive(board):
             map.print_map(rows, columns, board, player)
             direction = move.get_direction()
-            goal_obtained = goal.achieve_goal(direction)
-            if goal_obtained:
+            goal_attained = goal.achieve_goal(direction)
+            if goal_attained:
                 break
             else:
                 valid_move = move.validate_move(direction, player, board)
@@ -41,7 +41,7 @@ def main():
         print("\nGame over! You die in the forest running out of HP. Your soul will be staying "
               "here forever...")
     else:
-        print("\nCongratulations! You find the ONLY WAY OUT!\n "
+        print("\nCongratulations! You find the ONLY WAY OUT!\n"
               "You can now come back to BCIT to continue your endless work! :)")
 
 
