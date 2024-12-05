@@ -52,10 +52,10 @@ def beat_foe(character: dict, foes: dict, board: dict) -> bool:
     location = (character["current row"], character["current column"])
 
     if board[location] == "*":
-        print("You encounter a beast!")
+        print("\nYou encounter a beast!")
         enemy = {"health": foes["beast"]["health"], "damage": foes["beast"]["damage"]}
     else:
-        print("You encounter a dragon!")
+        print("\nYou encounter a dragon!")
         enemy = {"health": foes["dragon"]["health"], "damage": foes["dragon"]["damage"]}
 
     battle_with_foe(character, enemy)
@@ -82,19 +82,20 @@ def battle_with_foe(character: dict, foe: dict):
     """
     while character["current health"] > 0 and foe["health"] > 0:
         random_number = random.randint(1, 3)
-        user_guess = input("Guess an integer between 1 and 3 inclusive: ")
+        user_guess = input("\nGuess an integer between 1 and 3 inclusive to attack the enemy: ")
         try:
             user_guess = int(user_guess)
         except ValueError:
             character["current health"] -= foe["damage"]
-            print(f"Invalid input! You miss you turn, and get hit by your foe.\n"
-                  f"Your remaining HP is {character['current health']}.\n")
+            print(f"\nInvalid input! You miss you turn, and get hit by your foe.\n"
+                  f"Your remaining HP is {character['current health']}.")
         else:
             if user_guess == random_number:
                 foe["health"] -= character["current damage"]
-                print(f"Correct! You create {character['current damage']} damage to your foe.\n"
-                      f"Your foe's remaining HP is {foe['health']}.\n")
+                print(f"\nCorrect! You create {character['current damage']} damage to your foe.\n"
+                      f"Your foe's remaining HP is {foe['health']}.")
             else:
                 character["current health"] -= foe["damage"]
-                print(f"Wrong guess! Your foe create {foe["damage"]} damage to you.\n"
-                      f"Your current health is {character['current health']}.\n")
+                print(f"\nWrong guess! You miss your attack. Your foe creates {foe["damage"]} "
+                      f"damage to you.\n"
+                      f"Your current health is {character['current health']}.")
