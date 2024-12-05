@@ -15,12 +15,12 @@ class Test(TestCase):
         expected_return = {"name": "Descartes", "level": 1, "current health": 10,
                            "current damage": 1, "base health": 10, "base damage": 1,
                            "accumulated experience": 0, "current row": 0, "current column": 0}
-        expected_print = "\nWelcome again, Descartes! Your basic statistics is as follows:\n"\
-                         "Name: Descartes\n"\
-                         "Level: 1\n"\
-                         "HP: 10\n"\
-                         "Damage: 1\n"\
-                         "Experience: 0\n"
+        expected_print = ("\nWelcome again, Descartes! Your basic statistics is as follows:\n"
+                          "Name: Descartes\n"
+                          "Level: 1\n"
+                          "HP: 10\n"
+                          "Damage: 1\n"
+                          "Experience: 0\n")
         self.assertEqual(actual_return, expected_return)
         self.assertEqual(mock_stdout.getvalue(), expected_print)
 
@@ -31,12 +31,12 @@ class Test(TestCase):
         expected_return = {"name": "123!@#", "level": 1, "current health": 10,
                            "current damage": 1, "base health": 10, "base damage": 1,
                            "accumulated experience": 0, "current row": 0, "current column": 0}
-        expected_print = "\nWelcome again, 123!@#! Your basic statistics is as follows:\n"\
-                         "Name: 123!@#\n"\
-                         "Level: 1\n"\
-                         "HP: 10\n"\
-                         "Damage: 1\n"\
-                         "Experience: 0\n"
+        expected_print = ("\nWelcome again, 123!@#! Your basic statistics is as follows:\n"
+                          "Name: 123!@#\n"
+                          "Level: 1\n"
+                          "HP: 10\n"
+                          "Damage: 1\n"
+                          "Experience: 0\n")
         self.assertEqual(actual_return, expected_return)
         self.assertEqual(mock_stdout.getvalue(), expected_print)
 
