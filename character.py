@@ -103,6 +103,7 @@ def check_if_leve_up(character: dict):
     >>> player_two = {"name": "Aristotle", "level": 1, "current health": 1, "current damage": 1, \
                         "base health": 10, "base damage": 1, "accumulated experience": 15}
     >>> check_if_leve_up(player_two)
+    <BLANKLINE>
     Level up! Your health is fully recovered, and you can now create higher damage.
     Your basic statistics is as follows:
     Name: Aristotle
@@ -116,7 +117,7 @@ def check_if_leve_up(character: dict):
         character["current health"] = character["base health"] * character["level"]
         character["current damage"] = character["base damage"] * character["level"]
         character["accumulated experience"] -= 10
-        print("Level up! Your health is fully recovered, and you can now create higher damage.\n"
+        print("\nLevel up! Your health is fully recovered, and you can now create higher damage.\n"
               "Your basic statistics is as follows:\n"
               f"Name: {character['name']}\n"
               f"Level: {character['level']}\n"
