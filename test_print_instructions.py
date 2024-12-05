@@ -7,6 +7,7 @@ from narrative import print_instructions
 
 
 class Test(TestCase):
+
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_print_instructions_when_it_is_first_round(self, mock_stdout):
         print_instructions(1)

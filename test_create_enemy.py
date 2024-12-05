@@ -5,6 +5,7 @@ from foes import create_enemy
 
 
 class Test(TestCase):
+
     def test_create_enemy_with_a_small_positive_number(self):
         actual = create_enemy(1)
         expected = {"beast": {"health": 1, "damage": 1}, "dragon": {"health": 10, "damage": 3}}
