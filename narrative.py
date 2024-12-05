@@ -7,15 +7,17 @@ def print_instructions(game_loop: int):
     :postcondition: print respective statement according to the integer, representing the round of
                     game, passed to the function.
 
-    >>> print_instructions(1)
+    >>> print_instructions(1) #doctest: +NORMALIZE_WHITESPACE
     <BLANKLINE>
-    You wake up in the forest and are surrounded by beasts. A giant dragon is at the center of the forest. You are forced to involve in endless combat.
+    You wake up in the forest and are surrounded by beasts. A giant dragon is at the center of the
+    forest. You are forced to involve in endless combat.
     And there is only one way out!
 
-    >>> print_instructions(2)
+    >>> print_instructions(2) #doctest: +NORMALIZE_WHITESPACE
     <BLANKLINE>
     You can't help falling asleep after you beat the dragon. After a short while...
-    Again, you wake up at same place in the forest and are surrounded by beasts. The giant dragon is still alive at the center of the forest. You are forced to involve in endless combat again.
+    Again, you wake up at same place in the forest and are surrounded by beasts. The giant dragon
+    is still alive at the center of the forest. You are forced to involve in endless combat again.
     Remember, there is only one way out!
     """
     if game_loop == 1:

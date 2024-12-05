@@ -98,8 +98,9 @@ def check_if_leve_up(character: dict):
     >>> player_one = {"name": "Descartes", "level": 1, "current health": 10, "current damage": 1, \
                         "base health": 10, "base damage": 1, "accumulated experience": 0}
     >>> check_if_leve_up(player_one)
-    >>> player_one
-    {'name': 'Descartes', 'level': 1, 'current health': 10, 'current damage': 1, 'base health': 10, 'base damage': 1, 'accumulated experience': 0}
+    >>> player_one #doctest: +NORMALIZE_WHITESPACE
+    {'name': 'Descartes', 'level': 1, 'current health': 10, 'current damage': 1, 'base health': 10,
+    'base damage': 1, 'accumulated experience': 0}
     >>> player_two = {"name": "Aristotle", "level": 1, "current health": 1, "current damage": 1, \
                         "base health": 10, "base damage": 1, "accumulated experience": 15}
     >>> check_if_leve_up(player_two)
