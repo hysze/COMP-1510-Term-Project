@@ -34,6 +34,8 @@ def validate_move(direction: str, character: dict, game_map: dict) -> bool:
     >>> player_one = {"current row": 0, "current column": 0}
     >>> map_one = {(0, 0): " ", (0, 1): " ", (1, 0): "!", (1, 1): "*"}
     >>> validate_move("W", player_one, map_one)
+    <BLANKLINE>
+    Warning! You're heading to a wrong way. Please enter a valid direction.
     False
     >>> player_two = {"current row": 0, "current column": 0}
     >>> map_two = {(0, 0): " ", (0, 1): " ", (1, 0): "!", (1, 1): "*"}
@@ -55,6 +57,7 @@ def validate_move(direction: str, character: dict, game_map: dict) -> bool:
     if (destination_row, destination_column) in game_map:
         return True
     else:
+        print("\nWarning! You're heading to a wrong way. Please enter a valid direction.")
         return False
 
 
