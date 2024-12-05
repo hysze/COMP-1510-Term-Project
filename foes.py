@@ -1,4 +1,4 @@
-def create_enemy(scaling_factor: int) -> dict:
+def create_enemy(scaling_factor: int) -> dict[str, dict]:
     """
     Create enemies based on a scaler.
 
@@ -29,7 +29,7 @@ def create_enemy(scaling_factor: int) -> dict:
     return foes
 
 
-def boss_is_alive(game_map: dict):
+def boss_is_alive(game_map: dict[tuple, str]):
     """
     Check whether the boss is still alive.
 

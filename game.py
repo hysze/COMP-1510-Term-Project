@@ -33,8 +33,6 @@ def main():
                     map.clear_foe_on_map(player, board)
                     character.accumulate_experience(player)
                     character.check_if_level_up(player)
-            # else:
-            #     print("Warning! You're heading to a wrong way. Please enter a valid direction.")
         character.reset_character_position(player)
         game_loop += 1
     if not character.is_alive(player):

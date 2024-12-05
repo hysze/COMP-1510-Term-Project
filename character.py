@@ -1,4 +1,4 @@
-def create_character() -> dict:
+def create_character() -> dict[str, int]:
     """
     Create a beginning character based on user input.
 
@@ -39,7 +39,7 @@ def create_character() -> dict:
     return character
 
 
-def is_alive(character: dict) -> bool:
+def is_alive(character: dict[str, int]) -> bool:
     """
     Check whether the character is still alive.
 
@@ -62,7 +62,7 @@ def is_alive(character: dict) -> bool:
         return False
 
 
-def accumulate_experience(character: dict):
+def accumulate_experience(character: dict[str, int]):
     """
     Add experience to character.
 
@@ -83,7 +83,7 @@ def accumulate_experience(character: dict):
     character["accumulated experience"] += 3
 
 
-def check_if_level_up(character: dict):
+def check_if_level_up(character: dict[str, int]):
     """
     Check if the character should level up based on their accumulated experience.
 
@@ -127,7 +127,7 @@ def check_if_level_up(character: dict):
               f"Experience: {character['accumulated experience']}")
 
 
-def reset_character_position(character: dict):
+def reset_character_position(character: dict[str, int]):
     """
     Reset the character's current position to the start point.
 

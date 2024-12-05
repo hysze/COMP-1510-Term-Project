@@ -1,7 +1,7 @@
 import random
 
 
-def create_map(rows: int, columns: int) -> dict:
+def create_map(rows: int, columns: int) -> dict[tuple, str]:
     """
     Create a map of a specified size with assigned values.
 
@@ -37,7 +37,7 @@ def create_map(rows: int, columns: int) -> dict:
     return game_map
 
 
-def print_map(rows: int, columns: int, game_map: dict, character: dict):
+def print_map(rows: int, columns: int, game_map: dict[tuple, str], character: dict[str, int]):
     """
     Print the game map.
 
@@ -88,7 +88,7 @@ def print_map(rows: int, columns: int, game_map: dict, character: dict):
         print()
 
 
-def clear_foe_on_map(character: dict, game_map: dict):
+def clear_foe_on_map(character: dict[str, int], game_map: [tuple, str]):
     """
     Clear the foe on map after beating them.
 

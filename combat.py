@@ -1,7 +1,7 @@
 import random
 
 
-def check_for_foes(character: dict, board: dict) -> bool:
+def check_for_foes(character: dict[str, int], board: dict[tuple, str]) -> bool:
     """
     Check if there is a foe at the player's current location.
 
@@ -36,7 +36,7 @@ def check_for_foes(character: dict, board: dict) -> bool:
         return False
 
 
-def beat_foe(character: dict, foes: dict, board: dict) -> bool:
+def beat_foe(character: dict[str, int], foes: dict[str, dict], board: dict[tuple, str]) -> bool:
     """
     Check whether the player beat the foe they encounter.
 
@@ -51,7 +51,7 @@ def beat_foe(character: dict, foes: dict, board: dict) -> bool:
     :postcondition: Call battle_with_foe function to fight with a foe; return True if the numeric
                     value corresponded to the character's "current health" is larger than zero and
                     return False if less than or equal to zero
-    :return: a Boolean where True represents the player beat foe and otherwises False
+    :return: a Boolean where True represents the player beat foe and otherwise False
     """
     location = (character["current row"], character["current column"])
 
@@ -68,7 +68,7 @@ def beat_foe(character: dict, foes: dict, board: dict) -> bool:
         return False
 
 
-def battle_with_foe(character: dict, foe: dict):
+def battle_with_foe(character: dict[str, int], foe: dict[str, int]):
     """
     Play a number-guessing game to battle with a foe.
 

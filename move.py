@@ -15,7 +15,7 @@ def get_direction() -> str:
     return direction
 
 
-def validate_move(direction: str, character: dict, game_map: dict) -> bool:
+def validate_move(direction: str, character: dict[str, int], game_map: dict[tuple, str]) -> bool:
     """
     Validate the desired direction inputted by player.
 
@@ -61,7 +61,7 @@ def validate_move(direction: str, character: dict, game_map: dict) -> bool:
         return False
 
 
-def move_character(direction: str, character: dict):
+def move_character(direction: str, character: dict[str, int]):
     """
     Move the character to the player's desired direction.
 
