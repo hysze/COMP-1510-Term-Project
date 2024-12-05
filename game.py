@@ -31,10 +31,10 @@ def main():
                 if valid_move:
                     move.move_character(direction, player)
                     if combat.check_for_foes(player, board):
-                        combat.beat_foe(player, enemy, board)
-                        map.clear_foe_on_map(player, board)
-                        character.accumulate_experience(player)
-                        character.check_if_level_up(player)
+                        if combat.beat_foe(player, enemy, board):
+                            map.clear_foe_on_map(player, board)
+                            character.accumulate_experience(player)
+                            character.check_if_level_up(player)
         character.reset_character_position(player)
         game_loop += 1
     if not character.is_alive(player):
