@@ -46,9 +46,19 @@ class Test(TestCase):
 
     @patch('sys.stdout', new_callable=io.StringIO)
     @patch("builtins.input", side_effect=["123", "D"])
-    def test_get_user_choice_when_player_inputs_invalid_then_valid_value(self, _, mock_stdout):
+    def test_get_user_choice_for_one_invalid_input_before_valid_input(self, _, mock_stdout):
         actual_return = get_direction()
         expected_return = "D"
         expected_print = "Invalid input! Please try again.\n\n"
+        self.assertEqual(actual_return, expected_return)
+        self.assertEqual(mock_stdout.getvalue(), expected_print)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    @patch("builtins.input", side_effect=["123", "456", "D"])
+    def test_get_user_choice_for_multiple_invalid_inputs_before_valid_input(self, _, mock_stdout):
+        actual_return = get_direction()
+        expected_return = "D"
+        expected_print = ("Invalid input! Please try again.\n\n"
+                          "Invalid input! Please try again.\n\n")
         self.assertEqual(actual_return, expected_return)
         self.assertEqual(mock_stdout.getvalue(), expected_print)
